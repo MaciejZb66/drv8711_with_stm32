@@ -1,0 +1,2 @@
+../Core/Src/drv8711.c:9:6:DRV8711_SPI_Write	16	static
+../Core/Src/drv8711.c:16:10:DRV8711_SPI_Read	24	static
