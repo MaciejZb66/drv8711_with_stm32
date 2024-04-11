@@ -25,6 +25,9 @@
 #define   DRIVE_R	0x06
 #define   STATUS_R	0x07
 
+//
+#define Forward 0x00
+#define Backward 0x01
 //data structs
 typedef struct{
 	uint16_t ID :4;
@@ -32,7 +35,7 @@ typedef struct{
 	uint16_t ISGAIN :2;
 	uint16_t EXSTALL :1;
 	uint16_t MODE :4;
-	uint16_t RSTEP :1;
+	uint16_t RSTEP :1; //write
 	uint16_t RDIR :1;
 	uint16_t ENBL :1;
 }CTRL_data;
@@ -86,7 +89,7 @@ typedef struct{
 	uint16_t ID :4;
 	uint16_t Reserved :4;
 	uint16_t STDLAT :1;
-	uint16_t STD :1;
+	uint16_t STD :1;//read only
 	uint16_t UVLO :1;
 	uint16_t BPDF :1;
 	uint16_t APDF :1;
@@ -110,3 +113,5 @@ typedef union{
 //prototypes of functions
 void DRV8711_SPI_Write(uint16_t data, uint8_t reg);
 uint16_t DRV8711_SPI_Read(uint8_t reg);
+void DRV8711_init(void);
+void DRV8711_onestep(uint8_t dir);
