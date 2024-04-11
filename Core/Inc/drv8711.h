@@ -30,72 +30,72 @@
 #define Backward 0x01
 //data structs
 typedef struct{
-	uint16_t ID :4;
-	uint16_t DTIME :2;
-	uint16_t ISGAIN :2;
-	uint16_t EXSTALL :1;
-	uint16_t MODE :4;
-	uint16_t RSTEP :1; //write
-	uint16_t RDIR :1;
 	uint16_t ENBL :1;
+	uint16_t RDIR :1;
+	uint16_t RSTEP :1; //write
+	uint16_t MODE :4;
+	uint16_t EXSTALL :1;
+	uint16_t ISGAIN :2;
+	uint16_t DTIME :2;
+	uint16_t ID :4;
 }CTRL_data;
 
 typedef struct{
-	uint16_t ID :4;
-	uint16_t Reserved :1;
-	uint16_t SMPLTH :3;
 	uint16_t TORQUE :8;
+	uint16_t SMPLTH :3;
+	uint16_t Reserved :1;
+	uint16_t ID :4;
 }TORQUE_data;
 
 typedef struct{
-	uint16_t ID :4;
-	uint16_t Reserved :3;
-	uint16_t PWMMODE :1;
 	uint16_t TOFF :8;
+	uint16_t PWMMODE :1;
+	uint16_t Reserved :3;
+	uint16_t ID :4;
 }OFF_data;
 
 typedef struct{
-	uint16_t ID :4;
-	uint16_t Reserved :3;
-	uint16_t ABT :1;
 	uint16_t TBLANK :8;
+	uint16_t ABT :1;
+	uint16_t Reserved :3;
+	uint16_t ID :4;
 }BLANK_data;
 
 typedef struct{
-	uint16_t ID :4;
-	uint16_t Reserved :1;
-	uint16_t DECMOD :3;
 	uint16_t TDECAY :8;
+	uint16_t DECMOD :3;
+	uint16_t Reserved :1;
+	uint16_t ID :4;
 }DECAY_data;
 
 typedef struct{
-	uint16_t ID :4;
-	uint16_t VDIV :2;
-	uint16_t SDCNT :2;
 	uint16_t SDTHR :8;
+	uint16_t SDCNT :2;
+	uint16_t VDIV :2;
+	uint16_t ID :4;
 }STALL_data;
 
 typedef struct{
-	uint16_t ID :4;
-	uint16_t IDRIVEP :2;
-	uint16_t IDRIVEN :2;
-	uint16_t TDRIVEP :2;
-	uint16_t TDRIVEN :2;
-	uint16_t OCPDEG :2;
 	uint16_t OCPTH :2;
+	uint16_t OCPDEG :2;
+	uint16_t TDRIVEN :2;
+	uint16_t TDRIVEP :2;
+	uint16_t IDRIVEN :2;
+	uint16_t IDRIVEP :2;
+	uint16_t ID :4;
 }DRIVE_data;
 
 typedef struct{
-	uint16_t ID :4;
-	uint16_t Reserved :4;
-	uint16_t STDLAT :1;
-	uint16_t STD :1;//read only
-	uint16_t UVLO :1;
-	uint16_t BPDF :1;
-	uint16_t APDF :1;
-	uint16_t BOCP :1;
-	uint16_t AOCP :1;
 	uint16_t OTS :1;
+	uint16_t AOCP :1;
+	uint16_t BOCP :1;
+	uint16_t APDF :1;
+	uint16_t BPDF :1;
+	uint16_t UVLO :1;
+	uint16_t STD :1;//read only
+	uint16_t STDLAT :1;
+	uint16_t Reserved :4;
+	uint16_t ID :4;
 }STATUS_data;
 
 typedef union{
